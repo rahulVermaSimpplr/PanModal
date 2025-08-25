@@ -44,7 +44,7 @@ public class DimmedView: UIView {
     /**
      The closure to be executed on hitTest
      */
-    var hitTestHandler: ((_ point: CGPoint, _ event: UIEvent?) -> UIView?)?
+    public var hitTestHandler: ((_ point: CGPoint, _ event: UIEvent?) -> UIView?)?
 
     /**
      The closure to be executed when a tap occurs
