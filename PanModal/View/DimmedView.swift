@@ -66,6 +66,11 @@ public class DimmedView: UIView {
         return UITapGestureRecognizer(target: self, action: #selector(didTapView))
     }()
 
+    /**
+     A flag to track if a hitTest is already in progress to avoid recursive loops.
+     */
+    private var isHitting = false
+
     // MARK: - Initializers
 
     public init(dimColor: UIColor = UIColor.black.withAlphaComponent(0.7)) {
@@ -81,7 +86,15 @@ public class DimmedView: UIView {
     // MARK: - Event Handlers
 
     public override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        return self.hitTestHandler?(point, event) ?? super.hitTest(point, with: event)
+        // If a hitTest is already in progress, return nil to break the loop.
+        if isHitting { return nil }
+
+        isHitting = true
+        // If the hitTestHandler is set, use it. Otherwise, fall back to the default behavior.
+        let view = self.hitTestHandler?(point, event) ?? super.hitTest(point, with: event)
+        isHitting = false
+
+        return view
     }
 
     @objc private func didTapView() {
