@@ -37,6 +37,7 @@
 		74C072A5220BA76D00124CE1 /* PanModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C072A4220BA76D00124CE1 /* PanModalHeight.swift */; };
 		74C072A7220BA78800124CE1 /* PanModalPresentable+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C072A6220BA78800124CE1 /* PanModalPresentable+LayoutHelpers.swift */; };
 		74C072AA220BA82A00124CE1 /* UIViewController+PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C072A9220BA82A00124CE1 /* UIViewController+PanModalPresenter.swift */; };
+		7CA8880A2E5C82FA00D9F16F /* PanModalBackgroundInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31828BD24ED570600E3867B /* PanModalBackgroundInteraction.swift */; };
 		943904EB2226354100859537 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943904EA2226354100859537 /* BasicViewController.swift */; };
 		943904ED2226366700859537 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943904EC2226366700859537 /* AlertViewController.swift */; };
 		943904EF2226383700859537 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943904EE2226383700859537 /* NavigationController.swift */; };
@@ -591,6 +592,7 @@
 				743CABD322265F2E00634A5A /* ProfileViewController.swift in Sources */,
 				DC139070216D9458007A3E64 /* PanModalPresentationAnimator.swift in Sources */,
 				944EBA2E227BB7F400C4C97B /* FullScreenNavController.swift in Sources */,
+				7CA8880A2E5C82FA00D9F16F /* PanModalBackgroundInteraction.swift in Sources */,
 				DCA741AE216D90410021F2F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

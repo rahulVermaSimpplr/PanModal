@@ -29,7 +29,7 @@ extension PanModalPresentable where Self: UIViewController {
     var topLayoutOffset: CGFloat {
 
         guard let rootVC = rootViewController
-            else { return 0}
+        else { return 0}
 
         if #available(iOS 11.0, *) { return rootVC.view.safeAreaInsets.top } else { return rootVC.topLayoutGuide.length }
     }
@@ -40,8 +40,8 @@ extension PanModalPresentable where Self: UIViewController {
      */
     var bottomLayoutOffset: CGFloat {
 
-       guard let rootVC = rootViewController
-            else { return 0}
+        guard let rootVC = rootViewController
+        else { return 0}
 
         if #available(iOS 11.0, *) { return rootVC.view.safeAreaInsets.bottom } else { return rootVC.bottomLayoutGuide.length }
     }
@@ -52,10 +52,10 @@ extension PanModalPresentable where Self: UIViewController {
      - Note: If voiceover is on, the `longFormYPos` is returned.
      We do not support short form when voiceover is on as it would make it difficult for user to navigate.
      */
-    var shortFormYPos: CGFloat {
+    public var shortFormYPos: CGFloat {
 
         guard !UIAccessibility.isVoiceOverRunning
-            else { return longFormYPos }
+        else { return longFormYPos }
 
         let shortFormYPos = topMargin(from: shortFormHeight) + topOffset
 
@@ -69,7 +69,7 @@ extension PanModalPresentable where Self: UIViewController {
      - Note: We cap this value to the max possible height
      to ensure content is not rendered outside of the view bounds
      */
-    var longFormYPos: CGFloat {
+    public var longFormYPos: CGFloat {
         return max(topMargin(from: longFormHeight), topMargin(from: .maxHeight)) + topOffset
     }
 
@@ -80,7 +80,7 @@ extension PanModalPresentable where Self: UIViewController {
     var bottomYPos: CGFloat {
 
         guard let container = presentedVC?.containerView
-            else { return view.bounds.height }
+        else { return view.bounds.height }
 
         return container.bounds.size.height - topOffset
     }
@@ -111,7 +111,7 @@ extension PanModalPresentable where Self: UIViewController {
     private var rootViewController: UIViewController? {
 
         guard let application = UIApplication.value(forKeyPath: #keyPath(UIApplication.shared)) as? UIApplication
-            else { return nil }
+        else { return nil }
 
         return application.keyWindow?.rootViewController
     }
