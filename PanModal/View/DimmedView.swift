@@ -49,7 +49,7 @@ public class DimmedView: UIView {
     /**
      The closure to be executed when a tap occurs
      */
-    var didTap: ((_ recognizer: UIGestureRecognizer) -> Void)? {
+    public var didTap: ((_ recognizer: UIGestureRecognizer) -> Void)? {
         didSet {
             if self.didTap != nil {
                 addGestureRecognizer(tapGesture)

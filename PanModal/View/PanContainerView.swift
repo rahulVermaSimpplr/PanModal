@@ -15,8 +15,8 @@ import UIKit
  having to do those changes directly on the view
  */
 public class PanContainerView: UIView {
-
-    init(presentedView: UIView, frame: CGRect) {
+    
+    public init(presentedView: UIView, frame: CGRect) {
         super.init(frame: frame)
         addSubview(presentedView)
     }
